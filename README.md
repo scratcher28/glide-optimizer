@@ -3,7 +3,7 @@
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 [![Packagist Version](https://img.shields.io/packagist/v/infinityweb/glide-optimizer.svg?style=flat-square)](https://packagist.org/packages/infinityweb/glide-optimizer)
 
-This manipulator uses psliwa/image-optimizer package to minify resources.
+This manipulator uses ps/image-optimizer package to minify resources.
 
 Inspired by https://github.com/approached/laravel-image-optimizer
 
