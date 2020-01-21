@@ -8,8 +8,13 @@ use League\Glide\Manipulators\BaseManipulator;
 use Psr\Log\LoggerInterface;
 
 class OptimizerManipulator extends BaseManipulator {
-
+    /**
+     * @var OptimizerFactory|null
+     */
     protected $optimizerFactory = null;
+    /**
+     * @var array
+     */
     protected $config = [
         /*
           |--------------------------------------------------------------------------
@@ -27,7 +32,7 @@ class OptimizerManipulator extends BaseManipulator {
           | Transformer for image
           |--------------------------------------------------------------------------
           |
-          | You can choice which tranformer you will use
+          | You can choice which transformer you will use
           |
          */
         'transform_handler' => [
@@ -42,6 +47,7 @@ class OptimizerManipulator extends BaseManipulator {
     /**
      * Create Optimizer instance.
      * @param array $config 
+     * @param LoggerInterface|null $logger
      */
     public function __construct(array $config = [], LoggerInterface $logger = null) {
 
@@ -55,6 +61,8 @@ class OptimizerManipulator extends BaseManipulator {
      * Perform optimize image.
      * @param  Image $image The source image.
      * @return Image The manipulated image.
+     * @return Image
+     * @throws \Exception
      */
     public function run(Image $image) {
 
@@ -63,6 +71,7 @@ class OptimizerManipulator extends BaseManipulator {
         file_put_contents($tmp, $image->getEncoded());
 
         $imageTmp = \Intervention\Image\ImageManagerStatic::make($tmp);
+        $imageTmp->setDriver($image->getDriver());
 
         if (!isset($this->config['transform_handler'][$imageTmp->mime()])) {
             throw new \Exception('TransformHandler for file mime: "' . $image->mime() . '" was not found');
