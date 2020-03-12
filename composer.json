@@ -16,9 +16,9 @@
         }
     ],
     "require": {
-        "scratcher28/glide": "^1.0.0",
+        "scratcher28/glide": "^1.4.3",
         "psr/log": "1.0.*",
-        "scratcher28/image-optimizer": "^2.0.2"
+        "scratcher28/image-optimizer": "^2.0.3"
     },
     "require-dev": {
     },
