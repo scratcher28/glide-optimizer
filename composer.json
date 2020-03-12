@@ -1,5 +1,5 @@
 {
-    "name": "infinityweb/glide-optimizer",
+    "name": "scratcher28/glide-optimizer",
     "description": "An optimizer manipulator for Glide that uses ps/image-optimizer package.",
     "keywords": [
         "glide",
@@ -16,9 +16,9 @@
         }
     ],
     "require": {
-        "league/glide": "^1.0.0",
+        "scratcher28/glide": "^1.0.0",
         "psr/log": "1.0.*",
-        "ps/image-optimizer": "^2.0.2"
+        "scratcher28/image-optimizer": "^2.0.2"
     },
     "require-dev": {
     },
